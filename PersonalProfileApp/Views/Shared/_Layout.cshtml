@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | Bakbergen</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a asp-controller="Info" asp-action="Index" class="logo">
+                B<span>.</span>
+            </a>
+
+            <nav class="nav-links">
+                <a asp-controller="Info" asp-action="Index">Басты бет</a>
+                <a asp-controller="Info" asp-action="About">Мен туралы</a>
+                <a asp-controller="Info" asp-action="Portfolio">Жобалар</a>
+            </nav>
+
+            <a asp-controller="Info" asp-action="Portfolio" class="nav-button">
+                Портфолио ↗
+            </a>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <span>© 2026 Bakbergen</span>
+            <span>Жасалған ықыласпен.</span>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

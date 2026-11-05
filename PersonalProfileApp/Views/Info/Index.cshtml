@@ -1,0 +1,111 @@
+﻿@model PersonalProfileApp.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Басты бет";
+}
+
+<section class="hero">
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="availability">
+                <span class="status-dot"></span>
+                Веб-әзірлеуді үйреніп жүрмін
+            </div>
+
+            <p class="eyebrow">СӘЛЕМ, МЕНІҢ ЕСІМІМ</p>
+
+            <h1>
+                @Model.Name<span class="accent-text">.</span>
+            </h1>
+
+            <h2>
+                Болашақ <span class="accent-text">IT маманы</span>
+            </h2>
+
+            <p class="hero-description">
+                @Model.Bio
+                Мен заманауи технологияларды зерттеп,
+                пайдалы цифрлық өнімдер жасауды мақсат етемін.
+            </p>
+
+            <div class="hero-actions">
+                <a asp-controller="Info"
+                   asp-action="Portfolio"
+                   class="btn-primary">
+                    Жобаларымды көру ↗
+                </a>
+
+                <a asp-controller="Info"
+                   asp-action="About"
+                   class="btn-secondary">
+                    Мен туралы
+                </a>
+            </div>
+
+            <div class="hero-meta">
+                <div>
+                    <strong>@Model.Group</strong>
+                    <span>Оқу тобы</span>
+                </div>
+
+                <div>
+                    <strong>6B06102</strong>
+                    <span>Білім беру бағдарламасы</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-card">
+                <div class="visual-top">
+                    <span>DEVELOPER PROFILE</span>
+                    <span>01 / 03</span>
+                </div>
+
+                <div class="avatar">B<span>.</span></div>
+
+                <h3>@Model.Name</h3>
+                <p>Information Systems Student</p>
+
+                <div class="visual-line"></div>
+
+                <div class="visual-info">
+                    <span>UNIVERSITY</span>
+                    <strong>ҚазҰПУ</strong>
+                </div>
+
+                <div class="visual-info">
+                    <span>FIELD</span>
+                    <strong>Information Technology</strong>
+                </div>
+
+                <div class="visual-decoration">B.</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <p class="eyebrow">MY TECHNOLOGIES</p>
+            <h2>Мен қолданатын <span class="accent-text">технологиялар</span></h2>
+        </div>
+
+        <div class="skills-grid">
+            @foreach (var skill in Model.Skills)
+            {
+                <div class="skill-card">
+                    <span class="skill-icon">✦</span>
+                    <span>@skill</span>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

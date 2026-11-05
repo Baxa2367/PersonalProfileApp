@@ -1,0 +1,59 @@
+﻿@model PersonalProfileApp.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Портфолио";
+}
+
+<section class="page-hero">
+    <div class="section-container">
+        <p class="eyebrow">SELECTED WORKS</p>
+        <h1>Менің <span class="accent-text">жобаларым</span></h1>
+
+        <p class="page-description">
+            Мен әзірлеген және жұмыс барысында зерттеген цифрлық жобалар.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-container">
+
+        <div class="portfolio-grid">
+
+            @foreach (var project in Model.Projects)
+            {
+                <article class="project-card">
+
+                    <div class="project-top">
+                        <span class="project-label">PROJECT</span>
+                        <span class="project-arrow">↗</span>
+                    </div>
+
+                    <div class="project-symbol">B.</div>
+
+                    <h2>@project.Title</h2>
+
+                    <p>@project.Description</p>
+
+                    <div class="project-footer">
+                        <span>@project.Technology</span>
+                    </div>
+
+                </article>
+            }
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-container contact-section">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2>Болашақ мүмкіндіктерге <span class="accent-text">ашықпын.</span></h2>
+        <p>
+            Жаңа жобалар, технологиялар және қызықты идеялар —
+            менің дамуымның маңызды бөлігі.
+        </p>
+    </div>
+</section>

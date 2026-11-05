@@ -1,0 +1,78 @@
+﻿@model PersonalProfileApp.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Мен туралы";
+}
+
+<section class="page-hero">
+    <div class="section-container">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h1>Мен <span class="accent-text">туралы</span></h1>
+
+        <p class="page-description">
+            Менің білімім, қызығушылықтарым және IT саласындағы даму жолым.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-container about-grid">
+
+        <div class="about-card">
+            <div class="about-number">01</div>
+            <p class="eyebrow">INTRODUCTION</p>
+            <h2>@Model.Name</h2>
+
+            <p class="about-description">
+                @Model.Bio
+            </p>
+
+            <p class="about-description">
+                Менің негізгі мақсатым — теориялық білімді
+                тәжірибемен ұштастырып, заманауи IT шешімдерін жасау.
+            </p>
+        </div>
+
+        <div class="about-details">
+            <div class="detail-card">
+                <span>УНИВЕРСИТЕТ</span>
+                <h3>@Model.University</h3>
+            </div>
+
+            <div class="detail-card">
+                <span>МАМАНДЫҚ</span>
+                <h3>@Model.Program</h3>
+            </div>
+
+            <div class="detail-card">
+                <span>ОҚУ ТОБЫ</span>
+                <h3>@Model.Group</h3>
+            </div>
+
+            <div class="detail-card">
+                <span>БАҒДАРЛАМА</span>
+                <h3>6B06102</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-container">
+        <div class="section-heading">
+            <p class="eyebrow">MY SKILLS</p>
+            <h2>Техникалық <span class="accent-text">дағдылар</span></h2>
+        </div>
+
+        <div class="skills-grid">
+            @foreach (var skill in Model.Skills)
+            {
+                <div class="skill-card">
+                    <span class="skill-icon">✦</span>
+                    <span>@skill</span>
+                </div>
+            }
+        </div>
+    </div>
+</section>
